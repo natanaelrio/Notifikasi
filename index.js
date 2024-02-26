@@ -1,5 +1,4 @@
 const qrcode = require('qrcode-terminal');
-
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const whatsapp = new Client({
   authStrategy: new LocalAuth({
@@ -11,10 +10,12 @@ const whatsapp = new Client({
 });
 
 const bodyParser = require('body-parser')
-
+const cors = require('cors')
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 8080
+
+app.use(cors())
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -56,3 +57,5 @@ app.listen(port, () => {
 })
 
 
+// Export the Express API
+module.exports = app;
