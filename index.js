@@ -63,10 +63,29 @@
 
 const express = require('express')
 const cors = require('cors')
+const { Client, LocalAuth } = require('whatsapp-web.js')
+const bodyParser = require('body-parser')
+
+const whatsapp = new Client({
+  authStrategy: new LocalAuth({
+    clientId: "YOUR_CLIENT_ID"
+  }),
+  puppeteer: {
+    args: ['--no-sandbox'],
+  }
+});
+
 
 const app = express()
 
 app.use(cors())
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
 
 app.get('/', (req, res) => {
     res.send('Express JS on Vercel')
@@ -75,6 +94,13 @@ app.get('/', (req, res) => {
 app.get('/ping', (req, res) => {
     res.send('pong 🏓')
 })
+
+app.post('/mantap', (req, res) => {
+  console.log(req.body)
+  whatsapp.sendMessage(req.body.phoneNumber, req.body.massage)
+  res.send('sip')
+})
+
 
 const port = process.env.PORT || 8080
 
