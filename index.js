@@ -21,15 +21,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-  console.log('wdwdwdwddy!');
-  res.send()
+  res.send('Hello World!')
 })
-
 
 app.post('/mantap', (req, res) => {
   console.log(req.body)
   whatsapp.sendMessage(req.body.phoneNumber, req.body.massage)
-  res.send()
+  res.send('sip')
 })
 
 
