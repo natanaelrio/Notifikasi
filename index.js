@@ -88,30 +88,26 @@ app.use(bodyParser.json())
 
 
 app.get('/', (req, res) => {
-  res.send('Express JS on Vercel')
+    res.send('Express JS on Vercel')
 })
 
 app.get('/ping', (req, res) => {
-  res.send('pong 🏓')
+    res.send('pong 🏓')
 })
 
-try {
-  await
-  app.post('/mantap', (req, res) => {
-    whatsapp.sendMessage(req.body.phoneNumber, req.body.massage)
-    res.send('sip')
-  })
-} catch (e) {
-  console.log(e)
-}
+app.post('/mantap', (req, res) => {
+  whatsapp.sendMessage(req.body.phoneNumber, req.body.massage)
+  res.send('sip')
+})
+
 
 const port = process.env.PORT || 8080
 
 app.listen(port, (err, res) => {
-  if (err) {
-    console.log(err)
-    return res.status(500).send(err.message)
-  } else {
-    console.log('[INFO] Server Running on port:', port)
-  }
+    if (err) {
+        console.log(err)
+        return res.status(500).send(err.message)
+    } else {
+        console.log('[INFO] Server Running on port:', port)
+    }
 })
