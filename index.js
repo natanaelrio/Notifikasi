@@ -24,13 +24,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
+  const phoneNumber = { data: req.query.phoneNumber || '628971041460@c.us' }
+  const massage = { data: req.query.massage || 'waduh' }
+  whatsapp.sendMessage(phoneNumber.data, massage.data)
   res.send('Hello World!')
-})
-
-app.post('/mantap', (req, res) => {
-  console.log(req.body)
-  whatsapp.sendMessage(req.body.phoneNumber, req.body.massage)
-  res.send('sip')
 })
 
 

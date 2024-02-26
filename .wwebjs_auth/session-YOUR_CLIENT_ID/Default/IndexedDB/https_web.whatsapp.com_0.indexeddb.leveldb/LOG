@@ -1,3 +1,15 @@
-2024/02/26-16:02:57.553 1884 Reusing MANIFEST C:\Users\VICTUS\Desktop\KULIAH\notifikasi\.wwebjs_auth\session-YOUR_CLIENT_ID\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/02/26-16:02:57.554 1884 Recovering log #130
-2024/02/26-16:02:57.611 1884 Reusing old log C:\Users\VICTUS\Desktop\KULIAH\notifikasi\.wwebjs_auth\session-YOUR_CLIENT_ID\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000130.log 
+2024/02/26-16:50:36.063 2cb8 Reusing MANIFEST C:\Users\VICTUS\Desktop\KULIAH\notifikasi\.wwebjs_auth\session-YOUR_CLIENT_ID\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/26-16:50:36.063 2cb8 Recovering log #146
+2024/02/26-16:50:36.209 2cb8 Reusing old log C:\Users\VICTUS\Desktop\KULIAH\notifikasi\.wwebjs_auth\session-YOUR_CLIENT_ID\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000146.log 
+2024/02/26-16:50:50.023 6734 Level-0 table #154: started
+2024/02/26-16:50:50.042 6734 Level-0 table #154: 1143976 bytes OK
+2024/02/26-16:50:50.045 6734 Delete type=0 #146
+2024/02/26-16:50:51.927 6604 Compacting 1@1 + 2@2 files
+2024/02/26-16:50:52.006 6604 Generated table #155@1: 84874 keys, 2259833 bytes
+2024/02/26-16:50:52.053 6604 Generated table #156@1: 37345 keys, 2204616 bytes
+2024/02/26-16:50:52.059 6604 Generated table #157@1: 4951 keys, 155927 bytes
+2024/02/26-16:50:52.059 6604 Compacted 1@1 + 2@2 files => 4620376 bytes
+2024/02/26-16:50:52.061 6604 compacted to: files[ 0 0 4 0 0 0 0 ]
+2024/02/26-16:50:52.061 6604 Delete type=2 #149
+2024/02/26-16:50:52.061 6604 Delete type=2 #150
+2024/02/26-16:50:52.061 6604 Delete type=2 #154
