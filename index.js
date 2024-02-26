@@ -3,10 +3,12 @@ const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const whatsapp = new Client({
   authStrategy: new LocalAuth({
-      clientId: "YOUR_CLIENT_ID"
-  })
+    clientId: "YOUR_CLIENT_ID"
+  }),
+  puppeteer: {
+    args: ['--no-sandbox'],
+  }
 });
-
 
 const bodyParser = require('body-parser')
 
