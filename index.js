@@ -23,14 +23,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => {
-  const phoneNumber = { data: req.query.phoneNumber || '628971041460@c.us' }
-  const massage = { data: req.query.massage || 'waduh' }
-  whatsapp.sendMessage(phoneNumber.data, massage.data)
-  res.send('Hello World!')
-})
-
-
 whatsapp.on('qr', (qr) => {
   qrcode.generate(qr, { small: true });
 });
@@ -38,6 +30,15 @@ whatsapp.on('qr', (qr) => {
 whatsapp.on('ready', () => {
   console.log('whatsapp is ready!');
 });
+
+
+app.get('/mantap', (req, res) => {
+  const phoneNumber = { data: req.query.phoneNumber || '628971041460@c.us' }
+  const massage = { data: req.query.massage || 'waduh' }
+  whatsapp.sendMessage(phoneNumber.data, massage.data)
+  res.send('Hello World!')
+})
+
 
 whatsapp.on('message', async (message) => {
   console.log(message.body)
